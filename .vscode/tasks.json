@@ -1,0 +1,145 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Publicar CICEROCAUA no GitHub",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"git remote set-url origin https://github.com/CauaDev11/CICEROCAUA.git; if ($LASTEXITCODE -ne 0) { exit 1 }; git push -u origin main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Registrar aviso acadêmico",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"git add index.html style.css; if ($LASTEXITCODE -ne 0) { exit 1 }; git commit -m 'Add academic demo disclaimer'"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Commit aviso acadêmico",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"commit",
+				"-m",
+				"Add academic demo disclaimer"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Autenticar GitHub para publicação",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"login"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verificar contas GitHub autenticadas",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"list"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Consultar opções de login GitHub",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"login",
+				"--help"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Entrar como CauaDev11 no Git",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"login",
+				"--username",
+				"CauaDev11",
+				"--browser"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Confirmar login GitHub",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"list"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Autorizar GitHub por código",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"login",
+				"--username",
+				"CauaDev11",
+				"--device"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Confirmar conta com acesso",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"credential-manager",
+				"github",
+				"list"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Enviar projeto CICEROCAUA",
+			"type": "shell",
+			"command": "git",
+			"args": [
+				"push",
+				"-u",
+				"origin",
+				"main"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
